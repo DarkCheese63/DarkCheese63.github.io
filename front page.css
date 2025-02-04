@@ -1,0 +1,202 @@
+/* Universal reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make html and body fill the entire height and width of the viewport */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Center content in the viewport */
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  padding-top: 0px;
+  display: table-cell;
+}
+
+/* Style for the heading */
+h1 {
+  color: lightpink;
+  text-align: center;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 60px;
+}
+
+/* Style for the paragraph */
+p {
+  color:white;
+  font-family: verdana;
+  font-size: 20px;
+  margin-top: 70px;
+  margin-left: 75px;
+  
+}
+
+/* Button styles */
+button {
+  background: hsl(340deg, 100%, 32%);
+  margin: auto;
+}
+
+
+
+/* Banner styles */
+#banner {
+  position: relative;
+  height: 100vh; /* Full height of the viewport */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c1445;
+}
+
+/* Canvas styling */
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0c1445;
+  background-size: cover; /* Ensure the background fits */
+  min-height: 100vh;
+}
+
+#button-container {
+  background: hsl(340deg, 100%, 32%);
+  position: absolute; /* Position the button above the canvas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure it's on top of the canvas */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact centering */
+}
+
+.click-me {
+  position: absolute;
+  left: -145px;
+  top: 80%;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.yes-front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background-color: rgb(240, 30, 82);
+  color: white;
+  font-weight: bold;
+  transform: translateY(-6px);
+}
+
+.click-me:active .yes-front {
+  transform: translateY(-2px);
+}
+
+.dont-click-me{
+  position: absolute;
+  left: 25px;
+  top: 80%;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.no-front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background-color: rgb(240, 30, 82);
+  color: white;
+  font-weight: bold;
+  transform: translateY(-6px);
+}
+
+.dont-click-me:active .no-front {
+  transform: translateY(-2px);
+}
+
+#hello-kitty-img {
+  position: absolute; /* Position the image over the canvas */
+  top: 30%; /* Position the image from the top of the page */
+  margin: auto;
+  width: 400px; /* Adjust image size */
+  height: auto;
+  z-index: 0; /* Make sure it stays under the buttons */
+  border-radius: 10px; /* Optional: adds rounded corners to the image */
+  
+}
+
+.neonText {
+  position: absolute;
+  margin: auto;
+  top: 15%; /* Center text vertically */
+  left: 50%; /* Center text horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  font-size: 100px;
+  font-family: "Vibur", sans-serif;
+  color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px rgb(240, 30, 82),
+      0 0 82px rgb(240, 30, 82),
+      0 0 92px rgb(240, 30, 82),
+      0 0 102px rgb(240, 30, 82),
+      0 0 151px rgb(240, 30, 82);
+
+  animation: pulsate 0.11s ease-in-out infinite alternate;  
+  z-index: 1; /* Make sure the text is above the canvas */
+}
+@keyframes pulsate {
+    
+  100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px rgb(240, 30, 82),
+      0 0 80px rgb(240, 30, 82),
+      0 0 90px rgb(240, 30, 82),
+      0 0 100px rgb(240, 30, 82),
+      0 0 150px rgb(240, 30, 82);
+  
+  }
+  
+  0% {
+
+    text-shadow:
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 18px #fff,
+    0 0 38px rgb(240, 30, 82),
+    0 0 73px rgb(240, 30, 82),
+    0 0 80px rgb(240, 30, 82),
+    0 0 94px rgb(240, 30, 82),
+    0 0 140px rgb(240, 30, 82);
+
+  }
+}
